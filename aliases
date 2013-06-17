@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Verbosity of some basic utils
+alias cp='cp -v'
+alias mv='mv -vi'
+alias rm='rm -v'
+alias ln='ln -v'
+
+# List
+alias l='ls --color=auto -hlF'
+alias ls='ls --color=auto -F'
+alias dir='ls --color=auto -hlF'
+alias la='ls --color=auto -AF'
+
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+

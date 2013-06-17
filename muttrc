@@ -1,0 +1,22 @@
+
+set header_cache	= ~/.cache/mutt/header
+set message_cachedir	= ~/.cache/mutt/body
+set message_cachedir	= ~/.cache/mutt/cert
+
+set sort	= threads
+set sort_aux	= last-date-received
+
+
+set folder	= imaps://esjeon@lavabit.com:993/
+mailboxes	= +Inbox +Sent +Drafts
+set spoolfile	= +Inbox
+folder-hook	imaps://esjeon@lavabit.com:993/ "\
+	  set folder	= imaps://esjeon@lavabit.com:993/ \
+	; set spoolfile	= +Inbox \
+	; set postponed	= +Drafts \
+	; set smtp_url	= smtps://esjeon@lavabit.com:465/ \
+	; set from	= 'Eon S. Jeon <esjeon@lavabit.com> ' \
+	; set record	= +Sent \
+	; set realname	= 'Eon S. Jeon' \
+	; set hostname	= lavabit.com \
+	"

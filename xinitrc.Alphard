@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export XMODIFIERS="@im=nabi"
+export XIM_PROGRAM="/usr/bin/nabi"
+export GTK_IM_MODULE="xim"
+export QT_IM_MODULE="xim"
+nabi &
+
+xcompmgr &
+st &
+dwm
+
+pkill xcompmgr
+pkill nabi
+

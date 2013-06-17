@@ -1,0 +1,13 @@
+"3.7 (created: 2013/04/03 18:20:07)
+
+highlight Hint font-family: Terminus; font-size: 12px; font-weight: bold; text-transform: uppercase; color: black; background-color: #ff4; border:2px solid #770; border-radius:5px; padding: 0 2px;
+highlight HintElem background-color: rgba(255,0,0,0.1)
+noremap J gT
+noremap K gt
+noremap k 7k
+noremap j 7j
+noremap x :bd<Return>
+set hintchars=asdfghjkl;rutycmvn
+source! /home/eon/.vimperatorrc.local
+
+" vim: set ft=vimperator:
