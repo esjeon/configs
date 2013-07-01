@@ -7,7 +7,9 @@ noremap K gt
 noremap k 7k
 noremap j 7j
 noremap x :bd<Return>
+noremap X u
 set hintchars=asdfghjkl;rutycmvn
+set titlestring=
 source! /home/eon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
