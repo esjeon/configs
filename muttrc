@@ -4,7 +4,7 @@ set message_cachedir	= ~/.cache/mutt/body
 set message_cachedir	= ~/.cache/mutt/cert
 
 set sort	= threads
-set sort_aux	= last-date-received
+set sort_aux	= reverse-date-sent
 
 
 set folder	= imaps://esjeon@lavabit.com:993/
