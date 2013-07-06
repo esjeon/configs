@@ -6,6 +6,8 @@ set message_cachedir	= ~/.cache/mutt/cert
 set sort	= threads
 set sort_aux	= reverse-date-sent
 
+set send_charset="utf-8"
+set assumed_charset="utf-8"
 
 set folder	= imaps://esjeon@lavabit.com:993/
 mailboxes	= +Inbox +Sent +Drafts
