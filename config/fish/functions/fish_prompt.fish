@@ -1,18 +1,13 @@
-function prompt_status
-    echo -n '['
-
-    if [ $argv[1] -ne 0 ]
-        printf "s%s" (set_color red; echo $argv[1])
-        set_color normal
-    end
-
+function prompt_jobs
     set njobs (jobs -p | wc -l)
     if [ $njobs -gt 0 ]
-        printf "j%s" (set_color -o green; echo $njobs)
-        set_color normal
+        echo -n "$argv$njobs"
     end
+end
 
-    echo -n ']'
+function prompt_git_describe
+    git describe "--dirty="(set_color -o magenta)"*" --all ^/dev/null \
+        | sed "s/^[^/]*\///"
 end
 
 function fish_prompt
@@ -21,12 +16,14 @@ function fish_prompt
         echo -n (tput smkx) > /dev/tty  
     end
 
-    set -l ret $status
-    printf '\n%s %s %s %s' \
-        (set_color -o green ; hostname | cut -d . -f 1) \
-        (set_color    normal; prompt_status $ret) \
-        (set_color    purple; date "+%X") \
-        (set_color -o blue  ; prompt_pwd)
+    echo
+    set_color -o green ; echo -n (hostname | cut -d . -f 1)" "
+    set_color    normal; echo -n "["
+    set_color    normal; echo -n (prompt_jobs "j"(set_color -o yellow))
+    set_color    normal; echo -n "] "
+    set_color    purple; echo -n (date "+%R")" "
+    set_color -o blue  ; echo -n (prompt_pwd)" "
+    set_color    cyan  ; echo -n (prompt_git_describe)
 
     # print ROOT if root
     if [ "$USER" = root ]
