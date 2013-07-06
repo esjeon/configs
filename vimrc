@@ -10,6 +10,7 @@ color jellybeans
 au BufNewFile,BufRead *.js	setl sw=2 ts=2 expandtab 
 au BufNewFile,BufRead *.[ch]	setl sw=8 ts=8 noexpandtab
 au BufNewFile,BufRead *.hs	setl sw=4 ts=4 expandtab 
+au BufNewFile,BufRead *.fish	setl sw=4 ts=4 expandtab 
 
 " Folding
 function! FoldText() "{{{
