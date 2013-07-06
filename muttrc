@@ -22,3 +22,24 @@ folder-hook	imaps://esjeon@lavabit.com:993/ "\
 	; set realname	= 'Eon S. Jeon' \
 	; set hostname	= lavabit.com \
 	"
+
+
+color normal default default
+color tree yellow default
+color indicator brightwhite blue
+
+color hdrdefault brightblack default
+color header brightyellow default "^(From)"
+color header brightyellow default "^(Subject)"
+
+color attachment brightyellow default
+color quoted0 green default
+color quoted1 magenta default
+color quoted2 blue default
+color quoted3 cyan default
+
+color body brightblue black '(http|https|ftp):/(/[a-zA-Z0-9.@&#]+)+(/?)'
+
+color index brightwhite green "~U"
+color index brightblack default "~D"
+color index green default "~P"
