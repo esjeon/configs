@@ -206,7 +206,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javaScriptParensErrA           Error
   HiLink javaScriptParensErrB           Error
   HiLink javaScriptParensErrC           Error
-  HiLink javaScriptOperator             Operator
+  HiLink javaScriptOperator             Statement
   HiLink javaScriptType                 Type
   HiLink javaScriptNull                 Type
   HiLink javaScriptNumber               Number
