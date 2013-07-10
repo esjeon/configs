@@ -7,7 +7,6 @@ export QT_IM_MODULE="xim"
 nabi &
 
 xcompmgr &
-st &
 dwm
 
 pkill xcompmgr
