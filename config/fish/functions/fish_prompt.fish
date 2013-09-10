@@ -11,10 +11,7 @@ function prompt_git_describe
 end
 
 function prompt_acpi
-    set cap (cat "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:01/PNP0C09:00/PNP0C0A:00/power_supply/CMB0/capacity")
-    if [ "$cap" -ne 80 ]
-        echo "$argv$cap"
-    end
+    # TODO
 end
 
 function fish_prompt
