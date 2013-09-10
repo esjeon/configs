@@ -9,20 +9,31 @@ set sort_aux	= reverse-date-sent
 set send_charset="utf-8"
 set assumed_charset="utf-8"
 
-set folder	= imaps://esjeon@lavabit.com:993/
-mailboxes	= +Inbox +Sent +Drafts
-set spoolfile	= +Inbox
-folder-hook	imaps://esjeon@lavabit.com:993/ "\
-	  set folder	= imaps://esjeon@lavabit.com:993/ \
-	; set spoolfile	= +Inbox \
-	; set postponed	= +Drafts \
-	; set smtp_url	= smtps://esjeon@lavabit.com:465/ \
-	; set from	= 'Eon S. Jeon <esjeon@lavabit.com> ' \
-	; set record	= +Sent \
-	; set realname	= 'Eon S. Jeon' \
-	; set hostname	= lavabit.com \
-	"
+## Lavabit. DEAD :(
+#set folder	= imaps://esjeon@lavabit.com:993/
+#mailboxes	= +Inbox +Sent +Drafts
+#set spoolfile	= +Inbox
+#folder-hook	imaps://esjeon@lavabit.com:993/ "\
+#	  set folder	= imaps://esjeon@lavabit.com:993/ \
+#	; set spoolfile	= +Inbox \
+#	; set postponed	= +Drafts \
+#	; set smtp_url	= smtps://esjeon@lavabit.com:465/ \
+#	; set from	= 'Eon S. Jeon <esjeon@lavabit.com> ' \
+#	; set record	= +Sent \
+#	; set realname	= 'Eon S. Jeon' \
+#	; set hostname	= lavabit.com \
+#	"
 
+## Gmail
+#set folder = "imaps://imap.gmail.com:993"
+#set spoolfile = "+INBOX"
+#set postponed="+[Gmail]/Drafts"
+#set realname = "Eon S. Jeon"
+#set from = "07dosa@gmail.com"
+#set imap_user	= "07dosa@gmail.com"
+#set smtp_url = "smtp://07dosa@smtp.gmail.com:587/"
+
+set folder	= "~/Mail"
 
 color normal default default
 color tree yellow default
