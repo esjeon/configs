@@ -162,22 +162,26 @@ promptstat() {
 promptinit() {
 	local rs=$(style reset)
 
-### Hostname
+	# Hostname
 	local hostcol=''
 	case "${HOSTNAME}" in
 		Deneb)          hostcol=$(style bold 3:226) ;;
+		Alphard)        hostcol=$(style bold 2:83 ) ;;
 		Regulus)        hostcol=$(style bold 2:83 ) ;;
-		*.student.cs)   hostcol=$(style bold 5:133) ;;
-		linux0[23][0-9])hostcol=$(style bold 5:133) ;;
-		imac*)          hostcol=$(style bold 2:46 ) ;;
-		gl*)			hostcol=$(style bold);;
 	esac
 
 	PS1="\n${hostcol}\\h${rs}"
-	if [[ "${TERM}" = screen* ]]; then
+	if [[ -n "${TMUX}" ]]; then
+		local sid=$(tmux display-message -p '#S')
+		local wid=$(tmux display-message -p '#I')
+		export PS1="${PS1} $(style bold 6:51)${sid}"
+		export PS1="${PS1}$(style bold 3:226)${wid}${rs}"
+		unset sid wid
+	elif [[ "${TERM}" = screen* ]]; then
 		local sty=${STY#*.}
 		[[ "${STY#*.}" =~ pts* ]] && sty=${STY%.*.*}
-		export PS1="${PS1} $(style bold 6:51)${sty}$(style bold 3:226)${WINDOW}${rs}"
+		export PS1="${PS1} $(style bold 6:51)${sty}"
+		export PS1="${PS1}$(style bold 3:226)${WINDOW}${rs}"
 		unset sty
 	fi
 	PS1="${PS1} [\$(promptstat \$? \j)]"
@@ -189,7 +193,7 @@ promptinit() {
 
 	# Terminal Title
 	case "${TERM}" in
-		*rxvt*|*xterm*) PS1='\[\e]2;\h \w\a\]'"${PS1}" ;;
+		*rxvt*|*xterm*|st*) PS1='\[\e]2;\h \w\a\]'"${PS1}" ;;
 		screen*) PS1='\[\ek${PWD#${PWD%/*}/}\e\\\]'"${PS1}" ;;
 	esac
 
