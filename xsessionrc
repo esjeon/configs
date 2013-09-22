@@ -1,18 +1,17 @@
 #!/bin/sh
 
+# keyboard
+setxkbmap kr kr104
+
 # Swap left super/alt
 xmodmap -e 'remove mod1 = Alt_L'
 xmodmap -e 'remove mod4 = Super_L'
 xmodmap -e 'add mod1 = Super_L'
 xmodmap -e 'add mod4 = Alt_L'
 
-# input method
-if which uim >/dev/null; then
-	export XMODIFIERS="@im=uim"
-	export XIM_PROGRAM=`which uim-xim`
-	export GTK_IM_MODULE="uim"
-	export QT_IM_MODULE="uim"
-	uim-xim &
+# UIM toolbar
+if [ -e `which uim-xim` ]; then
+	uim-toolbar-gtk &
 fi
 
 # composite manager
