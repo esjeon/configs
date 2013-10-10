@@ -98,6 +98,7 @@ bind '"\C-F":"fg\n"'      ### Ctrl-F: fg
 ###### Environment
 ######
 
+pathadd "${HOME}/.cabal/bin"
 pathadd "${HOME}/bin"
 pathadd "/usr/sbin"
 pathadd "/sbin"
