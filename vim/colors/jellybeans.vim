@@ -349,7 +349,7 @@ call s:X("Function","fad07a","","","Yellow","")
 call s:X("Statement","8197bf","","","DarkBlue","")
 call s:X("PreProc","8fbfdc","","","LightBlue","")
 
-hi! link Operator Normal
+"hi! link Operator Normal
 
 call s:X("Type","ffb964","","","Yellow","")
 call s:Xn("NonText","606060","151515","",s:termBlack,"")
