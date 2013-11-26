@@ -175,14 +175,14 @@ promptinit() {
 	if [[ -n "${TMUX}" ]]; then
 		local sid=$(tmux display-message -p '#S')
 		local wid=$(tmux display-message -p '#I')
-		export PS1="${PS1} $(style bold 6:51)${sid}"
-		export PS1="${PS1}$(style bold 3:226)${wid}${rs}"
+		PS1="${PS1} $(style bold 6:51)${sid}"
+		PS1="${PS1}$(style bold 3:226)${wid}${rs}"
 		unset sid wid
 	elif [[ "${TERM}" = screen* ]]; then
 		local sty=${STY#*.}
 		[[ "${STY#*.}" =~ pts* ]] && sty=${STY%.*.*}
-		export PS1="${PS1} $(style bold 6:51)${sty}"
-		export PS1="${PS1}$(style bold 3:226)${WINDOW}${rs}"
+		PS1="${PS1} $(style bold 6:51)${sty}"
+		PS1="${PS1}$(style bold 3:226)${WINDOW}${rs}"
 		unset sty
 	fi
 	PS1="${PS1} [\$(promptstat \$? \j)]"
@@ -197,8 +197,6 @@ promptinit() {
 		*rxvt*|*xterm*|st*) PS1='\[\e]2;\h \w\a\]'"${PS1}" ;;
 		screen*) PS1='\[\ek${PWD#${PWD%/*}/}\e\\\]'"${PS1}" ;;
 	esac
-
-	export PS1
 }
 
 promptinit
