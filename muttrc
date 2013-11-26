@@ -24,7 +24,7 @@ set assumed_charset="utf-8"
 #	; set hostname	= lavabit.com \
 #	"
 
-## Gmail
+## Gmail. I don't use
 #set folder = "imaps://imap.gmail.com:993"
 #set spoolfile = "+INBOX"
 #set postponed="+[Gmail]/Drafts"
@@ -33,7 +33,18 @@ set assumed_charset="utf-8"
 #set imap_user	= "07dosa@gmail.com"
 #set smtp_url = "smtp://07dosa@smtp.gmail.com:587/"
 
-set folder	= "~/Mail"
+# Outlook
+set folder = "imaps://imap-mail.outlook.com:993"
+set spoolfile = "+INBOX"
+set postponed="+Drafts"
+set realname = "Eon S. Jeon"
+set from = "esjeon@live.com"
+set imap_user	= "esjeon@live.com"
+
+## Local mail
+#set folder	= "~/Mail"
+
+
 
 color normal default default
 color tree yellow default
