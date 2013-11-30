@@ -2,7 +2,7 @@
 filetype plugin indent on
 syntax on
 set bg=dark
-set number cursorline showcmd hls modeline
+set number showcmd hls modeline
 set ts=8
 
 color jellybeans
