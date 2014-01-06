@@ -3,12 +3,6 @@
 # keyboard
 setxkbmap kr kr104
 
-# Swap left super/alt
-xmodmap -e 'remove mod1 = Alt_L'
-xmodmap -e 'remove mod4 = Super_L'
-xmodmap -e 'add mod1 = Super_L'
-xmodmap -e 'add mod4 = Alt_L'
-
 # UIM toolbar
 if [ -e `which uim-xim` ]; then
 	uim-toolbar-gtk &
