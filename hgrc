@@ -3,6 +3,3 @@
 username = Eon S. Jeon <esjeon@hyunmu.am>
 verbose = True
 
-[extensions]
-hgext.bookmarks =
-hggit = 
