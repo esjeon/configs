@@ -1,0 +1,37 @@
+"1.1
+
+loadplugins '\.(js|penta)$'
+group user
+
+set go=bCrsn
+set defsearch=duckduckgo
+
+" Zoom
+nmap zZ  :zoom!<Space>120<CR>
+nmap zz  :zoom!<Space>120<CR>
+nmap  =  :zoom!<Space>120<CR>
+nmap zi  <full-zoom-in>
+nmap  +  <full-zoom-in>
+nmap zo  <full-zoom-out>
+nmap '-' <full-zoom-out>
+
+" Scroll
+nmap j 8<scroll-down-line>
+nmap k 8<scroll-up-line>
+
+" Tab
+nmap -count J :tabprevious<Space><count><CR>
+nmap -count K :tabnext<Space><count><CR>
+nmap        x :tabclose<CR>
+nmap d ""
+
+" Sidebar
+nmap <F1> :help
+nmap <F2> :sidebar!<Space>Bookmarks<CR>
+nmap <F3> :sidebar!<Space>Downloads<CR>
+
+" Insert mode & Caret mode
+nmap i <pass-all-keys>
+nmap c <Insert>
+
+" vim:set filetype=vim:
