@@ -251,11 +251,6 @@ fun! s:rgb(rgb)
   return s:color(l:r, l:g, l:b)
 endfun
 
-"EON: proxy for Xorig
-fun! s:Xn(group, fg, bg, attr, lcfg, lcbg)
-  call s:X(a:group, a:fg, "", a:attr, a:lcfg, a:lcbg)
-endfun
-
 " sets the highlighting for the given group
 fun! s:X(group, fg, bg, attr, lcfg, lcbg)
   if s:low_color
@@ -294,7 +289,7 @@ fun! s:X(group, fg, bg, attr, lcfg, lcbg)
 endfun
 " }}}
 
-call s:Xn("Normal","e8e8d3","151515","","White","")
+call s:X("Normal","e8e8d3","151515","","White","")
 set background=dark
 
 if !exists("g:jellybeans_use_lowcolor_black") || g:jellybeans_use_lowcolor_black
@@ -320,10 +315,9 @@ endif
 call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor","","b0d0f0","","","")
 
-call s:Xn("LineNr","605958","151515","none",s:termBlack,"")
+call s:X("LineNr","605958","151515","none",s:termBlack,"")
 call s:X("Comment","888888","","italic","Grey","")
-"call s:X("Todo","808080","","bold","White",s:termBlack)
-call s:X("Todo","f0a0c0","888800","","Red","White")
+call s:X("Todo","808080","","bold","White",s:termBlack)
 
 call s:X("StatusLine","000000","dddddd","italic","","White")
 call s:X("StatusLineNC","ffffff","403c41","italic","White","Black")
@@ -350,10 +344,10 @@ call s:X("Function","fad07a","","","Yellow","")
 call s:X("Statement","8197bf","","","DarkBlue","")
 call s:X("PreProc","8fbfdc","","","LightBlue","")
 
-"hi! link Operator Normal
+hi! link Operator Normal
 
 call s:X("Type","ffb964","","","Yellow","")
-call s:Xn("NonText","606060","151515","",s:termBlack,"")
+call s:X("NonText","606060","151515","",s:termBlack,"")
 
 call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
 
@@ -468,21 +462,21 @@ call s:X("IndentGuidesEven","","1c1c1c","","","")
 hi! link TagListFileName Directory
 call s:X("PreciseJumpTarget","B9ED67","405026","","White","Green")
 
-"" Manual overrides for 256-color terminals. Dark colors auto-map badly.
-"EON: if !s:low_color
-"  hi StatusLineNC ctermbg=235
-"  hi Folded ctermbg=236
-"  hi FoldColumn ctermbg=234
-"  hi SignColumn ctermbg=236
-"  hi CursorColumn ctermbg=234
-"  hi CursorLine ctermbg=234
-"  hi SpecialKey ctermbg=234
-"  hi NonText ctermbg=233
-"  hi LineNr ctermbg=233
-"  hi DiffText ctermfg=81
-"  hi Normal ctermbg=233
-"  hi DbgBreakPt ctermbg=53
-"endif
+" Manual overrides for 256-color terminals. Dark colors auto-map badly.
+if !s:low_color
+  hi StatusLineNC ctermbg=235
+  hi Folded ctermbg=236
+  hi FoldColumn ctermbg=234
+  hi SignColumn ctermbg=236
+  hi CursorColumn ctermbg=234
+  hi CursorLine ctermbg=234
+  hi SpecialKey ctermbg=234
+  hi NonText ctermbg=233
+  hi LineNr ctermbg=233
+  hi DiffText ctermfg=81
+  hi Normal ctermbg=233
+  hi DbgBreakPt ctermbg=53
+endif
 
 " delete functions {{{
 delf s:X
