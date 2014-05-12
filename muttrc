@@ -9,42 +9,13 @@ set sort_aux	= reverse-date-sent
 set send_charset="utf-8"
 set assumed_charset="utf-8"
 
-## Lavabit. DEAD :(
-#set folder	= imaps://esjeon@lavabit.com:993/
-#mailboxes	= +Inbox +Sent +Drafts
-#set spoolfile	= +Inbox
-#folder-hook	imaps://esjeon@lavabit.com:993/ "\
-#	  set folder	= imaps://esjeon@lavabit.com:993/ \
-#	; set spoolfile	= +Inbox \
-#	; set postponed	= +Drafts \
-#	; set smtp_url	= smtps://esjeon@lavabit.com:465/ \
-#	; set from	= 'Eon S. Jeon <esjeon@lavabit.com> ' \
-#	; set record	= +Sent \
-#	; set realname	= 'Eon S. Jeon' \
-#	; set hostname	= lavabit.com \
-#	"
-
-## Gmail. I don't use
-#set folder = "imaps://imap.gmail.com:993"
-#set spoolfile = "+INBOX"
-#set postponed="+[Gmail]/Drafts"
-#set realname = "Eon S. Jeon"
-#set from = "07dosa@gmail.com"
-#set imap_user	= "07dosa@gmail.com"
-#set smtp_url = "smtp://07dosa@smtp.gmail.com:587/"
-
-# Outlook
-set folder = "imaps://imap-mail.outlook.com:993"
-set spoolfile = "+INBOX"
-set postponed="+Drafts"
-set realname = "Eon S. Jeon"
-set from = "esjeon@live.com"
-set imap_user	= "esjeon@live.com"
-
-## Local mail
-#set folder	= "~/Mail"
-
-
+set folder	= "imaps://esjeon@hyunmu.am/"
+set smtp_url	= "smtp://esjeon@hyunmu.am:587/"
+set spoolfile	= "+INBOX"
+set record	= "+INBOX"
+set postponed	= "+Drafts"
+set realname	= "Eon S. Jeon"
+set from	= "esjeon@hyunmu.am"
 
 color normal default default
 color tree yellow default
@@ -60,7 +31,7 @@ color quoted1 magenta default
 color quoted2 blue default
 color quoted3 cyan default
 
-color body brightblue black '(http|https|ftp):/(/[a-zA-Z0-9.@&#\%\-]+)+(/?)'
+color body brightblue black '(http|https|ftp):/(/[a-zA-Z0-9.@&#\%\-:&?]+)+(/?)'
 
 color index brightwhite green "~U"
 color index brightblack default "~D"
