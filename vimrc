@@ -1,20 +1,19 @@
 
 filetype plugin indent on
 syntax on
+
 set bg=dark
-set number showcmd hls modeline
+set showcmd hls modeline
 set ts=8
 
-color jellybeans
+if empty(matchstr($TERM, '256color'))
+	set t_Co=8
+else
+	set t_Co=256
+	color jellybeans
+endif
 
-au BufNewFile,BufRead *.js	setl sw=2 ts=2 expandtab
-au BufNewFile,BufRead *.html	setl sw=2 ts=2 expandtab
-au BufNewFile,BufRead *.[ch]	setl sw=8 ts=8 noexpandtab
-au BufNewFile,BufRead *.[ch]pp	setl sw=4 ts=4 noexpandtab
-au BufNewFile,BufRead *.hs	setl sw=4 ts=4 expandtab
-au BufNewFile,BufRead *.fish	setl sw=4 ts=4 expandtab
-
-" Folding
+" simpler fold message, with preserved indentation
 function! FoldText() "{{{
 	let tabsp = repeat(' ', &ts)
 	let line = substitute(getline(v:foldstart), "\t", tabsp, "g")
@@ -23,10 +22,4 @@ function! FoldText() "{{{
 	return line . '   (+'.len.') '
 endfunction "}}}
 set foldtext=FoldText()
-set foldmethod=syntax
-set foldlevelstart=99
-let xml_syntax_folding=1
-let javaScript_fold=1
-let javascript_fold='true'
-let sh_fold_enabled=1
-let vimsyn_folding='af'
+
