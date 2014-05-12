@@ -489,3 +489,9 @@ delf s:grey_color
 delf s:grey_level
 delf s:grey_number
 " }}}
+
+" EON: additional hack for transparent terms
+"      bg was set to 151515
+hi Normal ctermbg=NONE
+hi NonText ctermbg=NONE
+hi LineNr ctermbg=NONE
