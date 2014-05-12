@@ -6,9 +6,7 @@ set bg=dark
 set showcmd hls modeline
 set ts=4
 
-if empty(matchstr($TERM, '256color'))
-	set t_Co=8
-else
+if !empty(matchstr($TERM, '256color'))
 	set t_Co=256
 	color jellybeans
 endif
