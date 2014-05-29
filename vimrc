@@ -4,7 +4,7 @@ syntax on
 
 set bg=dark
 set showcmd hls modeline
-set ts=4
+set ts=8
 
 if !empty(matchstr($TERM, '256color'))
 	set t_Co=256
