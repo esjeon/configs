@@ -34,4 +34,7 @@ nmap <F3> :sidebar!<Space>Downloads<CR>
 nmap i <pass-all-keys>
 nmap c <Insert>
 
+" Copy right away
+nmap -builtin <C-c> <C-v><C-c>
+
 " vim:set filetype=vim:
