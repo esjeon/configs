@@ -31,7 +31,7 @@ color quoted1 magenta default
 color quoted2 blue default
 color quoted3 cyan default
 
-color body brightblue black '(http|https|ftp):/(/[a-zA-Z0-9.@&#\%\-:&?]+)+(/?)'
+color body brightblue black '(http|https|ftp):/(/[a-zA-Z0-9.@&#\%\-\:&?]+)+(/?)'
 
 color index brightwhite green "~U"
 color index brightblack default "~D"
