@@ -9,8 +9,8 @@ if [ -e `which uim-xim` ]; then
 fi
 
 # composite manager
-if which xcompmgr; then
-	xcompmgr &
+if which compton; then
+	compton &
 fi >/dev/null
 
 # GTK config file location, for QT
