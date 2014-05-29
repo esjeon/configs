@@ -3,7 +3,7 @@
 loadplugins '\.(js|penta)$'
 group user
 
-set go=bCrsn
+set go=bCrsnB
 set defsearch=duckduckgo
 
 " Zoom
