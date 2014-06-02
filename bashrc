@@ -45,3 +45,13 @@ alias egrep='egrep --color=auto'
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+# per-term
+case "${TERM}" in
+	st|st-*)
+		# Backspace
+		stty erase ^H
+		# Delete
+		echo $(tput smkx) >/dev/tty
+		;;
+esac
