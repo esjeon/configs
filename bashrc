@@ -51,7 +51,5 @@ case "${TERM}" in
 	st|st-*)
 		# Backspace
 		stty erase ^H
-		# Delete
-		echo $(tput smkx) >/dev/tty
 		;;
 esac
