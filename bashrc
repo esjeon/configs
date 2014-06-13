@@ -53,3 +53,7 @@ case "${TERM}" in
 		stty erase ^H
 		;;
 esac
+
+# Path
+[[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin:${PATH}"
+export PATH
