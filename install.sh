@@ -1,23 +1,25 @@
 #!/bin/sh
 
+CONFDIR="Configs"
+
 linkall() {
 	local src="$1"
-	local dst="$2"
-	for file in $(ls "${src}"); do
-		local dfile="${dst}/.${file}"
+	local prefix="$2"
+	local lprefix="$3"
 
-		if [ -L "${dfile}" ]; then
-			rm -v "${dfile}"
-		elif [ -e "${dfile}" ]; then
-			[ -e "${dfile}.bak" ] && rm -rfv "${dfile}.bak"
-			mv -v "${dfile}" "${dfile}.bak"
+	for file in $(ls "${src}"); do
+		local dst="${prefix}${file}"
+
+		if [ -L "${dst}" ]; then
+			rm -v "${dst}"
+		elif [ -e "${dst}" ]; then
+			[ -e "${dst}.bak" ] && rm -rfv "${dst}.bak"
+			mv -v "${dst}" "${dst}.bak"
 		fi
 
-		ln -sv "${src}/${file}" "${dfile}"
+		ln -sv "${lprefix}${src}/${file}" "${dst}"
 	done
 }
-
-CONFDIR="Configs"
 
 MODULE="$1"
 if [ -z "${MODULE}" ]; then
@@ -36,6 +38,6 @@ if [ ! -d "${HOME}/${CONFDIR}/${MODULE}" ]; then
 	exit 1
 fi
 
-linkall "${CONFDIR}/${MODULE}/dotfile" "${HOME}"
-linkall "${CONFDIR}/${MODULE}/config" "${HOME}/.config"
+linkall "${CONFDIR}/${MODULE}/dotfile" "${HOME}/." ""
+linkall "${CONFDIR}/${MODULE}/config" "${HOME}/.config/" "../"
 
