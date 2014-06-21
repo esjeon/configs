@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Xft.dpi: 157" | xrdb
+
+st &
+exec dwm 
