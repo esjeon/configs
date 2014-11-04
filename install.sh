@@ -21,7 +21,7 @@ linkall() {
 			mv -v "${dst}" "${dst}.bak"
 		fi
 
-		ln -sv "${lprefix}${src}/${file}" "${dst}"
+		ln -sv "${lprefix}${src}${file}" "${dst}"
 	done
 }
 
