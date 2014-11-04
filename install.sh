@@ -7,6 +7,10 @@ linkall() {
 	local prefix="$2"
 	local lprefix="$3"
 
+	if [ ! -d "${src}" ]; then
+		return
+	fi
+
 	for file in $(ls "${src}"); do
 		local dst="${prefix}${file}"
 
